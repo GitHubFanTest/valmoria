@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kingdom of Valmoria</title>
+<meta name="description" content="The Kingdom of Valmoria is a micronation ruled by King Thomory. Capital: Berain.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Spectral:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fafbf9;--ink:#17201b;--muted:#4b5850;--accent:#006b47;--rule:#d8ddd6;
+  --red:#d52b1e;--green:#006b47;--gold:#f0a500;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  background:linear-gradient(to bottom,#d52b1e env(safe-area-inset-top,0px),var(--bg) 0);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e1713;--ink:#eaf0ea;--muted:#a7b5ab;--accent:#f0a500;--rule:#27382f;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e1713;--ink:#eaf0ea;--muted:#a7b5ab;--accent:#f0a500;--rule:#27382f;
+  color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Spectral",Georgia,"Times New Roman",serif;
+  font-size:1.1rem;line-height:1.7;
+}
+.hero{
+  position:relative;display:flex;flex-direction:column;
+  height:min(92svh,720px);min-height:540px;
+  background:linear-gradient(to bottom,var(--red) 0 33.34%,var(--green) 0 66.67%,#fff 0);
+  overflow:hidden;
+}
+.ring{
+  position:absolute;left:50%;top:50%;
+  width:clamp(210px,62vw,400px);aspect-ratio:1;
+  transform:translate(-50%,-50%);
+}
+.ring svg{display:block;width:100%;height:100%}
+.title{
+  margin-top:auto;padding:0 1.25rem 2rem;text-align:center;color:#17201b;
+}
+.title h1{
+  margin:0;font-family:"IM Fell English",Georgia,serif;font-weight:400;
+  font-size:clamp(2rem,8vw,3.6rem);line-height:1.1;
+}
+.title p{margin:.5rem 0 0;font-style:italic;color:#4a4f4c;font-size:1.05rem}
+main{max-width:40rem;margin:0 auto;padding:3rem 1.25rem 2rem}
+section{padding:1.75rem 0;border-top:1px solid var(--rule)}
+section:first-child{border-top:0}
+h2{
+  margin:0 0 .75rem;font-family:"IM Fell English",Georgia,serif;font-weight:400;
+  font-size:1.9rem;line-height:1.2;color:var(--accent);
+}
+p{margin:0 0 1rem}
+dl{display:grid;grid-template-columns:max-content 1fr;gap:.5rem 1.5rem;margin:0}
+dt{font-weight:600}
+dd{margin:0}
+.swatches{list-style:none;margin:0;padding:0}
+.swatches li{display:flex;align-items:center;gap:.9rem;margin-bottom:.6rem}
+.sw{flex:none;width:2.2rem;height:1.4rem;border-radius:2px;border:1px solid var(--rule)}
+.anthem p{font-style:italic}
+.anthem h3{margin:1.25rem 0 .4rem;font-size:1.05rem;font-weight:600;font-style:normal}
+footer{max-width:40rem;margin:0 auto;padding:1rem 1.25rem 3rem;color:var(--muted);font-size:.95rem}
+a{color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="ring">
+    <svg viewBox="-100 -100 200 200" role="img" aria-label="A gold crown inside a ring of twelve gold stars">
+      <g id="stars" fill="#f0a500"></g>
+      <g fill="#f0a500">
+        <path d="M-38 14L-46 -18L-24 -2L-12 -28L0 -6L12 -28L24 -2L46 -18L38 14Z"/>
+        <path d="M-40 18H40L36 29H-36Z"/>
+        <circle cx="-46" cy="-20" r="4"/>
+        <circle cx="-12" cy="-30" r="4"/>
+        <circle cx="12" cy="-30" r="4"/>
+        <circle cx="46" cy="-20" r="4"/>
+        <rect x="-1.6" y="-52" width="3.2" height="20"/>
+        <rect x="-7" y="-46" width="14" height="3.2"/>
+      </g>
+    </svg>
+  </div>
+  <div class="title">
+    <h1>Kingdom of Valmoria</h1>
+    <p>The horizon of home is honored here.</p>
+  </div>
+</header>
+
+<main>
+  <section>
+    <h2>About Valmoria</h2>
+    <p>Valmoria is a small kingdom ruled by King Thomory, with its capital in Berain. The king holds real power, and citizens vote on the laws.</p>
+  </section>
+
+  <section>
+    <h2>At a glance</h2>
+    <dl>
+      <dt>Name</dt><dd>Kingdom of Valmoria</dd>
+      <dt>Capital</dt><dd>Berain</dd>
+      <dt>King</dt><dd>King Thomory</dd>
+      <dt>Government</dt><dd>Semi-constitutional monarchy</dd>
+      <dt>Language</dt><dd>English</dd>
+      <dt>Currency</dt><dd>Euro</dd>
+      <dt>Motto</dt><dd>The horizon of home is honored here</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>The flag</h2>
+    <p>Three horizontal stripes carry a gold crown inside a ring of twelve gold stars.</p>
+    <ul class="swatches">
+      <li><span class="sw" style="background:#d52b1e"></span>Red for courage</li>
+      <li><span class="sw" style="background:#006b47"></span>Green for ground</li>
+      <li><span class="sw" style="background:#fff"></span>White for peace</li>
+      <li><span class="sw" style="background:#f0a500"></span>Gold for the crown and the stars</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>How Valmoria is governed</h2>
+    <p>Valmoria is a semi-constitutional monarchy. Citizens vote on laws. The king may veto any law they pass, and he has the final word.</p>
+  </section>
+
+  <section class="anthem">
+    <h2>The Stars in Valmoria</h2>
+    <p>The national anthem.</p>
+    <h3>Verse 1</h3>
+    <p>Twelve stars stand above the crown,<br>silent over field and stone.<br>We who keep this ground and town<br>keep it as our own.</p>
+    <h3>Chorus</h3>
+    <p>The horizon of home is honored here.<br>Let it be kept, and let it be known.<br>Beneath the stars we stand together,<br>and we will not leave it alone.</p>
+    <h3>Verse 2</h3>
+    <p>The crown is old, the road is long,<br>the people bear it well.<br>Let the quiet be our song<br>and our word be kept as well.</p>
+  </section>
+
+  <section>
+    <h2>The constitution</h2>
+    <p>The constitution is being drafted. It will appear here when it is ready.</p>
+  </section>
+</main>
+
+<footer>
+  <p>Valmoria is a micronation, a creative project. It is not a recognized country.</p>
+</footer>
+
+<script>
+(function(){
+  var g=document.getElementById("stars"),ns="http://www.w3.org/2000/svg";
+  var R=82,ro=10,ri=4;
+  for(var i=0;i<12;i++){
+    var a=-Math.PI/2+i*Math.PI/6,cx=R*Math.cos(a),cy=R*Math.sin(a),pts=[];
+    for(var k=0;k<10;k++){
+      var r=k%2?ri:ro,t=-Math.PI/2+k*Math.PI/5;
+      pts.push((cx+r*Math.cos(t)).toFixed(2)+","+(cy+r*Math.sin(t)).toFixed(2));
+    }
+    var p=document.createElementNS(ns,"polygon");
+    p.setAttribute("points",pts.join(" "));
+    g.appendChild(p);
+  }
+})();
+</script>
+</body>
+</html>
