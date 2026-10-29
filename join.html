@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Become a citizen of Valmoria</title>
+<style>
+body{font-family:Georgia,serif;max-width:26rem;margin:2rem auto;padding:0 1.25rem;line-height:1.6}
+input,button{display:block;width:100%;padding:.7rem;margin:.5rem 0;font:inherit;box-sizing:border-box}
+button{background:#006b47;color:#fff;border:0;cursor:pointer}
+button.alt{background:#d52b1e}
+#msg{min-height:1.5rem}
+</style>
+</head>
+<body>
+<h1>Become a citizen</h1>
+<div id="auth">
+  <input id="username" placeholder="Citizen name (3-20 characters)" maxlength="20">
+  <input id="email" type="email" placeholder="Email">
+  <input id="password" type="password" placeholder="Password (8+ characters)">
+  <button id="signup">Join Valmoria</button>
+  <button id="login" class="alt">Log in</button>
+</div>
+<div id="card" hidden>
+  <h2 id="name"></h2>
+  <p id="info"></p>
+  <button id="logout">Log out</button>
+</div>
+<p id="msg"></p>
+
+<script type="module">
+import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/+esm";
+
+const sb = createClient("YOUR_SUPABASE_URL", "YOUR_SUPABASE_ANON_KEY");
+const $ = (id) => document.getElementById(id);
+const say = (t) => ($("msg").textContent = t);
+
+async function refresh() {
+  const { data: { user } } = await sb.auth.getUser();
+  $("auth").hidden = !!user;
+  $("card").hidden = !user;
+  if (!user) return;
+  const { data, error } = await sb.from("citizens")
+    .select("citizen_no, username, joined_at").single();
+  if (error) return say(error.message);
+  $("name").textContent = data.username;
+  $("info").textContent = "Citizen No. " + String(data.citizen_no).padStart(4, "0") +
+    " · joined " + new Date(data.joined_at).toLocaleDateString();
+}
+
+$("signup").onclick = async () => {
+  const username = $("username").value.trim();
+  if (username.length < 3) return say("Pick a citizen name with 3 or more characters.");
+  const { error } = await sb.auth.signUp({
+    email: $("email").value,
+    password: $("password").value,
+    options: { data: { username } }
+  });
+  say(error ? error.message : "Check your email to confirm, then log in.");
+};
+
+$("login").onclick = async () => {
+  const { error } = await sb.auth.signInWithPassword({
+    email: $("email").value,
+    password: $("password").value
+  });
+  say(error ? error.message : "");
+  refresh();
+};
+
+$("logout").onclick = async () => { await sb.auth.signOut(); refresh(); };
+
+refresh();
+</script>
+</body>
+</html>
