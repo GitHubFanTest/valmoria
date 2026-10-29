@@ -31,7 +31,7 @@ button.alt{background:#d52b1e}
 <script type="module">
 import { createClient } from "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/+esm";
 
-const sb = createClient("YOUR_SUPABASE_URL", "YOUR_SUPABASE_ANON_KEY");
+const sb = createClient("https://tempznauwxjlsfnmfsud.supabase.co", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRlbXB6bmF1d3hqbHNmbm1mc3VkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTMyMjU0MTksImV4cCI6MjEwODgwMTQxOX0.Xai1Q0zJcb7cjHo7EveublZp7O2dSgZCYNp9WY1nm5Y");
 const $ = (id) => document.getElementById(id);
 const say = (t) => ($("msg").textContent = t);
 
